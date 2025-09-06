@@ -1,0 +1,17 @@
+app:
+  port: 8080
+  host: "0.0.0.0"
+  logLevel: "info"
+  logOutput: "stdout" # stdout, file,mixed
+  logger:
+    rotation: "1h"
+    rotationSize: 1024
+    rotationCount: 3
+    rotationTime: "1h"
+
+database:
+  host: 43.137.38.67
+  port: 5432
+  user: postgres
+  password: pg123
+  database: tele_repair_hub

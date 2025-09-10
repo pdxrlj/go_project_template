@@ -44,6 +44,13 @@ func (r *Response) Success(data any) error {
 	return r.Context.JSON(http.StatusOK, r)
 }
 
+func (r *Response) NoContent() error {
+	r.Status = 0
+	r.Message = http.StatusText(http.StatusOK)
+	r.Data = nil
+	return r.Context.JSON(http.StatusOK, r)
+}
+
 func (r *Response) Error(data error) error {
 	if r.Status == 0 {
 		r.Status = http.StatusInternalServerError
